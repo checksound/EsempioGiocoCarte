@@ -1,3 +1,4 @@
+package base;
 
 /**
  * An object of type Hand represents a hand of cards.  The
@@ -6,45 +7,15 @@
  */
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 
-public class HandNew {
+public class Hand {
 
     private ArrayList<Card> hand;   // The cards in the hand.
-    
-    private static Comparator<Card> COMPARATOR_BY_SUIT = new Comparator<Card>() {
-
-		@Override
-		public int compare(Card c, Card c1) {
-			
-			if ( c1.getSuit() < c.getSuit() ||
-                    (c1.getSuit() == c.getSuit() && c1.getValue() < c.getValue()) )
-				return 1;
-			else
-				return -1;
-		}
-    	
-    };
-    
-    private static Comparator<Card> COMPARATOR_BY_VALUE = new Comparator<Card>() {
-
-		@Override
-		public int compare(Card c, Card c1) {
-			
-			if ( c1.getValue() < c.getValue() ||
-                    (c1.getValue() == c.getValue() && c1.getSuit() < c.getSuit()) )
-				return 1;
-			else
-				return -1;
-		}
-    	
-    };
 
     /**
      * Create a hand that is initially empty.
      */
-    public HandNew() {
+    public Hand() {
         hand = new ArrayList<Card>();
     }
 
@@ -116,7 +87,22 @@ public class HandNew {
      * Note that aces are considered to have the lowest value, 1.
      */
     public void sortBySuit() {
-        Collections.sort(hand, COMPARATOR_BY_SUIT);
+        ArrayList<Card> newHand = new ArrayList<Card>();
+        while (hand.size() > 0) {
+            int pos = 0;  // Position of minimal card.
+            Card c = hand.get(0);  // Minimal card.
+            for (int i = 1; i < hand.size(); i++) {
+                Card c1 = hand.get(i);
+                if ( c1.getSuit() < c.getSuit() ||
+                        (c1.getSuit() == c.getSuit() && c1.getValue() < c.getValue()) ) {
+                    pos = i;
+                    c = c1;
+                }
+            }
+            hand.remove(pos);
+            newHand.add(c);
+        }
+        hand = newHand;
     }
 
     /**
@@ -125,7 +111,22 @@ public class HandNew {
      * Note that aces are considered to have the lowest value, 1.
      */
     public void sortByValue() {
-        Collections.sort(hand, COMPARATOR_BY_VALUE);
+        ArrayList<Card> newHand = new ArrayList<Card>();
+        while (hand.size() > 0) {
+            int pos = 0;  // Position of minimal card.
+            Card c = hand.get(0);  // Minimal card.
+            for (int i = 1; i < hand.size(); i++) {
+                Card c1 = hand.get(i);
+                if ( c1.getValue() < c.getValue() ||
+                        (c1.getValue() == c.getValue() && c1.getSuit() < c.getSuit()) ) {
+                    pos = i;
+                    c = c1;
+                }
+            }
+            hand.remove(pos);
+            newHand.add(c);
+        }
+        hand = newHand;
     }
 
 }

@@ -1,3 +1,5 @@
+package base;
+
 public class BlackjackHand extends Hand {
 
     /**

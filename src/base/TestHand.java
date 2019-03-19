@@ -1,7 +1,8 @@
+package base;
 
-public class TestHandNew {
+public class TestHand {
 	
-	private static void print(HandNew hand) {
+	private static void print(Hand hand) {
 		int numCards = hand.getCardCount();
 		
 		for(int i = 0; i < numCards; i++ ) {
@@ -11,7 +12,7 @@ public class TestHandNew {
 
 	public static void main(String[] args) {
 		
-		HandNew mano1 = new HandNew();
+		Hand mano1 = new Hand();
 		
 		mano1.addCard(new Card(9, Card.HEARTS));
 		mano1.addCard(new Card(7, Card.SPADES));

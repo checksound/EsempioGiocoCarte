@@ -1,3 +1,6 @@
+package improved;
+
+import base.Card;
 
 public class TestHand {
 	

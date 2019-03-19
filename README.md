@@ -27,8 +27,18 @@ public void sortBySuit() {
 	hand = newHand;
 }
 ```
-nella classe [Hand](src/Hand.java).
 
+nella classe [Hand](src/base/Hand.java).
+
+Vedi [TestHand](src/base/TestHand.java) per esempio di utilizzo.
+
+---------
+
+La classe  [Hand](src/improved/Hand.java) nel package `improved`, utilizza il metodo `sort()` di `java.util.Collections`.
+
+Vedi [TestHand](src/improved/TestHand.java) per esempio di utilizzo.
+
+---------
 
 Preso da http://math.hws.edu/javanotes8/
 
