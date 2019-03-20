@@ -32,11 +32,33 @@ nella classe [Hand](src/base/Hand.java).
 
 Vedi [TestHand](src/base/TestHand.java) per esempio di utilizzo.
 
+In [Deck](), c'è l'algoritmo per eseguire il mescolamento delle carte del mazzo:
+
+```java
+/**
+ * Put all the used cards back into the deck (if any), and
+ * shuffle the deck into a random order.
+ */
+public void shuffle() {
+    for ( int i = deck.length-1; i > 0; i-- ) {
+        int rand = (int)(Math.random()*(i+1));
+        Card temp = deck[i];
+        deck[i] = deck[rand];
+        deck[rand] = temp;
+    }
+    cardsUsed = 0;
+}
+```
+
 ---------
 
-La classe  [Hand](src/improved/Hand.java) nel package `improved`, utilizza il metodo `sort()` di `java.util.Collections`.
+La classe  [Hand](src/improved/Hand.java) nel package `improved`, utilizza il metodo `sort()` di `java.util.Collections` per eseguire i diversi tipi di sort `void sortBySuit()` e `void sortByValue()`.
 
 Vedi [TestHand](src/improved/TestHand.java) per esempio di utilizzo.
+
+---------
+
+Nel package `improvedWithEnum` c'è la versione che utilizza `enum` per il valori delle carte e i semi. 
 
 ---------
 
