@@ -43,10 +43,14 @@ public class Deck {
         else
             deck = new Card[52];
         int cardCt = 0; // How many cards have been created so far.
-        for ( int suit = 0; suit <= 3; suit++ ) {
-            for ( int value = 1; value <= 13; value++ ) {
-                deck[cardCt] = new Card(CardValue.values()[value - 1], 
-                		Suit.values()[suit]);
+        for (Suit suit: Suit.values()) {
+            for ( CardValue cValue: CardValue.values() ) {
+            	
+            	if(suit == Suit.JOKER)
+            		continue;
+            	
+                deck[cardCt] = new Card(cValue, 
+                		suit);
                 cardCt++;
             }
         }
