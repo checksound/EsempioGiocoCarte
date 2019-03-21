@@ -1,6 +1,8 @@
 # Esempio gioco carte
 
-Un altro esempio di utilizzo dell'algoritmo di **selection sort** per ordinare un mazzo di carte (utilizzando la classe ArrayList al posto dell'array). In questo caso la carte sono contenute in una lista di tipo `ArrayList<Card>`. Un oggetto di tipo `Card` contiene due metodi d'istanza `getSuit()` e `getValue()`. In questo algoritmo di sorting le carte viene creata una nuova lista e le carte sono prese dalla vecchia lista in ordine crescente, e messe nella nuova lista. Alla fina alla variabile `hand`  (che conteneva la vecchia lista di carte non ordinate) viene assegnata la nuova lista con le carte ordinate.
+Un altro esempio di utilizzo dell'algoritmo di **selection sort** per ordinare un mazzo di carte (utilizzando la classe `ArrayList` al posto dell'array). 
+
+In questo caso la carte sono contenute in una lista di tipo `ArrayList<Card>` all'interno della classe `Hand`. La classe `Card` contiene due metodi d'istanza `getSuit()` e `getValue()`. In questo algoritmo di sorting le carte viene creata una nuova lista e le carte sono prese dalla vecchia lista in ordine crescente, e messe nella nuova lista. Alla fina alla variabile `hand`  (che conteneva la vecchia lista di carte non ordinate) viene assegnata la nuova lista con le carte ordinate.
 
 ```java
 /**
@@ -30,9 +32,9 @@ public void sortBySuit() {
 
 nella classe [Hand](src/base/Hand.java).
 
-Vedi [TestHand](src/base/TestHand.java) per esempio di utilizzo.
+Vedi [TestHand](src/base/TestHand.java) per esempio di esecuzione del sorting, per seme e per valore.
 
-In [Deck](), c'è l'algoritmo per eseguire il mescolamento delle carte del mazzo:
+In [Deck](src/base/Deck.java), c'è l'algoritmo per eseguire il mescolamento delle carte del mazzo:
 
 ```java
 /**
@@ -49,6 +51,8 @@ public void shuffle() {
     cardsUsed = 0;
 }
 ```
+
+Nell'esecuzione del gioco, vedi classe [HighLow](./src/base/HighLow.java), viene chiesto all'utente di indovinate se la carte seguente pescata dal mazzo, mischiato in modo casuale, sarà maggiore o minore della carta precedente.
 
 ---------
 

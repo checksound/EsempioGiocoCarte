@@ -1,5 +1,11 @@
 package base;
 
+/**
+ * Classe di esempio per verificare il sorting
+ * 
+ * @author cam
+ *
+ */
 public class TestHand {
 	
 	private static void print(Hand hand) {
